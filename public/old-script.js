@@ -74,14 +74,15 @@ solveButton.addEventListener('click', () => {
     const nextMoves = isVertical ? verticalMoves(x, y) : horizontalMoves(x, y);
 
     for (const [newX, newY] of nextMoves) {
-      // We allow revisiting the same cell if it matches the sequence letter
-      if (newX >= 0 && newX < 5 && newY >= 0 && newY < 5 && gridMatrix[newX][newY] === nextChar) {
+      if (newX >= 0 && newX < 5 && newY >= 0 && newY < 5 && !visited[newX][newY] && gridMatrix[newX][newY] === nextChar) {
+        visited[newX][newY] = true;
         path.push([newX, newY]);
         console.log(`Moving to x=${newX}, y=${newY}, nextChar=${nextChar}`);
 
         // Alternate direction: vertical -> horizontal or horizontal -> vertical
         if (dfs(newX, newY, index + 1, !isVertical)) return true;
 
+        visited[newX][newY] = false;
         path.pop();
       }
     }
@@ -95,6 +96,7 @@ solveButton.addEventListener('click', () => {
   for (let i = 0; i < 5; i++) {
     for (let j = 0; j < 5; j++) {
       if (gridMatrix[i][j] === sequence[0]) {
+        visited[i][j] = true;
         path.push([i, j]);
         console.log(`Starting DFS from i=${i}, j=${j}`);
         if (dfs(i, j, 1, true)) { // Start with vertical direction
@@ -107,6 +109,7 @@ solveButton.addEventListener('click', () => {
           solutionFound = true;
           break;
         }
+        visited[i][j] = false;
         path.pop();
       }
     }
