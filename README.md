@@ -11,3 +11,6 @@ To Run:
 7. Enter the characters into the grid
 8. Enter the sequence characters
 9. Click the 'Solve' button
+
+## Notes:
+Sometimes this will return "No soltion found". Just generate a new grid by running your virus extrapolator again and eventually it will solve it.
