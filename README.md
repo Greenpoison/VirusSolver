@@ -13,4 +13,4 @@ To Run:
 9. Click the 'Solve' button
 
 ## Notes:
-Sometimes this will return "No soltion found". Just generate a new grid by running your virus extrapolator again and eventually it will solve it.
+When a grid character is needed to be selected more than 3 times, the selection icon (NUM) can clip past the textbox, just follow the numbers.
