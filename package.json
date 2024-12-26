@@ -1,0 +1,24 @@
+{
+  "name": "virussolver",
+  "version": "1.0.0",
+  "description": "SS13 Monkestation Virus Extrapolator Solver",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Greenpoison/VirusSolver.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Greenpoison/VirusSolver/issues"
+  },
+  "homepage": "https://github.com/Greenpoison/VirusSolver#readme"
+}
